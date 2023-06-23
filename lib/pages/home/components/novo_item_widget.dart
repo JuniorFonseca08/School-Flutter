@@ -53,11 +53,12 @@ class _NovoItemWidgetState extends State<NovoItemWidget> {
     final isValido = _formKey.currentState!.validate();
     if (isValido) {
       final item = AfazerEntity(
-          uuid: const Uuid().v4(),
-          titulo: _titleController.text,
-          dataInicio: DateTime.now(),
-          dataFim: DateTime.now(),
-          conteudos: []);
+        uuid: const Uuid().v4(),
+        titulo: _titleController.text,
+        dataInicio: DateTime.now(),
+        dataFim: DateTime.now(),
+        conteudos: [],
+      );
 
       bool valid = false;
       if (dropdownValue == TipoLista.tarefa) {
@@ -65,8 +66,7 @@ class _NovoItemWidgetState extends State<NovoItemWidget> {
         if (isTarefasValidas) {
           valid = true;
           for (final value in itens) {
-            item.conteudos!.add(
-                AfazerChecklistEntity(titulo: value.text, isChecked: true));
+            item.conteudos!.add(AfazerChecklistEntity(titulo: value.text));
           }
         }
       } else {
@@ -121,15 +121,15 @@ class _NovoItemWidgetState extends State<NovoItemWidget> {
                   dropdownValue = value!;
                 });
               },
-            )
+            ),
           ],
         ),
         TextFormField(
           controller: _titleController,
-          decoration: const InputDecoration(hintText: 'Digite um nome'),
+          decoration: const InputDecoration(hintText: 'Digi um nome'),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Por favor, digite um nome. ';
+              return 'Por favor, digite um nome.';
             }
             return null;
           },
@@ -149,10 +149,9 @@ class _NovoItemWidgetState extends State<NovoItemWidget> {
           ),
         if (dropdownValue == TipoLista.tarefa)
           Form(
-              key: _formKeyTarefas,
-              child: Column(
-                children: itens.map(defaultCheckItem).toList(),
-              )),
+            key: _formKeyTarefas,
+            child: Column(children: itens.map(defaultCheckItem).toList()),
+          ),
         const SpacerComponent(),
         ElevatedButton(
           onPressed: handleSubmit,

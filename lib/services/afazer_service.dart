@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../entities/afazer_entity.dart';
 
 class AfazerService {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test1/entities/afazer_entity.dart';
 import 'package:flutter_test1/services/afazer_service.dart';
+
+import '../entities/afazer_entity.dart';
 
 class AfazerProvider with ChangeNotifier {
   final service = AfazerService();
