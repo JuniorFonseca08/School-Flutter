@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test1/app_routes.dart';
 import 'package:flutter_test1/entities/afazer_entity.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_test1/components/spacer_component.dart';
 import 'package:flutter_test1/pages/home/components/item_widget.dart';
-import 'package:flutter_test1/pages/home/components/novo_item_widget.dart';
 import 'package:flutter_test1/providers/afazer_provider.dart';
 
 class AfazeresTab extends StatefulWidget {
@@ -24,7 +22,8 @@ class _AfazeresTab extends State<AfazeresTab> {
   }
 
   void onDetalhes(AfazerEntity item, int idx) {
-    Navigator.pushNamed(context, AppRoutes.detalhe);
+    store.selecionado = item;
+    Navigator.pushNamed(context, AppRoutes.detalhe, arguments: idx);
   }
 
   @override

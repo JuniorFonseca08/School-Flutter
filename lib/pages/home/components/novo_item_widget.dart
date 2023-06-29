@@ -126,7 +126,7 @@ class _NovoItemWidgetState extends State<NovoItemWidget> {
         ),
         TextFormField(
           controller: _titleController,
-          decoration: const InputDecoration(hintText: 'Digi um nome'),
+          decoration: const InputDecoration(hintText: 'Digite um nome'),
           validator: (value) {
             if (value == null || value.isEmpty) {
               return 'Por favor, digite um nome.';

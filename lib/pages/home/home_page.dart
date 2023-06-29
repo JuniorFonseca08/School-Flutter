@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test1/components/app_bar_component.dart';
 import 'package:flutter_test1/components/body_component.dart';
 import 'package:flutter_test1/pages/home/abas/afazeres_tab.dart';
 import 'package:flutter_test1/pages/home/abas/perfil_tab.dart';
